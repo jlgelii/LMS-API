@@ -16,10 +16,10 @@ namespace CleanArchitecture.Application.UserAccounts.Queries.GetUserByLogin
 {
     public class GetUserByLoginQueryHandler : IRequestHandler<GetUserByLoginQuery, Response<GetUserByLoginDto>>
     {
-        private readonly ISampleDbContext _context;
+        private readonly ILMSDbContext _context;
         private readonly IJwtServices _jwtServices;
 
-        public GetUserByLoginQueryHandler(ISampleDbContext context, IJwtServices jwtServices)
+        public GetUserByLoginQueryHandler(ILMSDbContext context, IJwtServices jwtServices)
         {
             this._context = context;
             this._jwtServices = jwtServices;

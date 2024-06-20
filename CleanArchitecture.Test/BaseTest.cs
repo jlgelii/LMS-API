@@ -15,7 +15,7 @@ namespace CleanArchitecture.Test
 
     public class BaseTest : IDisposable
     {
-        public readonly SampleDbContext _context;
+        public readonly LMSDbContext _context;
         public readonly IJwtServices _jwtServices;
         public readonly IDateTimeService _dateTimeService;
 
@@ -25,13 +25,13 @@ namespace CleanArchitecture.Test
             _jwtServices = new JwtServiceTest();
             _dateTimeService = new DateTimeServiceTest();
 
-            var option = new DbContextOptionsBuilder<SampleDbContext>()
+            var option = new DbContextOptionsBuilder<LMSDbContext>()
                                                    .UseInMemoryDatabase(databaseName: "SampleDb")
                                                    .UseInternalServiceProvider(new ServiceCollection().AddEntityFrameworkInMemoryDatabase()
                                                                                                       .BuildServiceProvider())
                                                    .Options;
 
-            _context = new SampleDbContext(option, _dateTimeService, _jwtServices);
+            _context = new LMSDbContext(option, _dateTimeService, _jwtServices);
             SeedTestData.Seed(_context);
         }
 

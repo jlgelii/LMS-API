@@ -15,10 +15,10 @@ namespace CleanArchitecture.Application.UserAccounts.Command.UpdateUser
 {
     public class UpdateUserCommandHandler : IRequestHandler<UpdateUserCommand, Response<UserAccount>>
     {
-        private readonly ISampleDbContext _context;
+        private readonly ILMSDbContext _context;
         private readonly IJwtServices _jwtServices;
 
-        public UpdateUserCommandHandler(ISampleDbContext context, IJwtServices jwtServices)
+        public UpdateUserCommandHandler(ILMSDbContext context, IJwtServices jwtServices)
         {
             this._context = context;
             this._jwtServices = jwtServices;

@@ -14,10 +14,10 @@ namespace CleanArchitecture.Application.UserAccounts.Command.CreateUser
 {
     public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, Response<UserAccount>>
     {
-        private readonly ISampleDbContext _context;
+        private readonly ILMSDbContext _context;
         private readonly IJwtServices _jwtServices;
 
-        public CreateUserCommandHandler(ISampleDbContext context, IJwtServices jwtServices)
+        public CreateUserCommandHandler(ILMSDbContext context, IJwtServices jwtServices)
         {
             this._context = context;
             this._jwtServices = jwtServices;

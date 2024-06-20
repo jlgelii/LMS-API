@@ -43,7 +43,7 @@ namespace CleanArchitecture.API
             services.AddSingleton<IConnectionsConfigurations, ConnectionsConfigurations>();
             services.AddSingleton<IJwtServices, JwtService>();
             services.AddSingleton<IDateTimeService, DateTimeService>();
-            services.AddScoped<ISampleDbContext, SampleDbContext>();
+            services.AddScoped<ILMSDbContext, LMSDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

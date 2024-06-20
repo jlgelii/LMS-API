@@ -11,14 +11,14 @@ using System.Threading.Tasks;
 
 namespace CleanArchitecture.Infrastructure.Database
 {
-    public class SampleDbContext : DbContext, ISampleDbContext
+    public class LMSDbContext : DbContext, ILMSDbContext
     {
         private readonly string _databaseName;
         private readonly IJwtServices _jwtServices;
         private readonly IDateTimeService _dateTimeService;
 
         #region Constructor
-        public SampleDbContext(IConnectionsConfigurations connections,
+        public LMSDbContext(IConnectionsConfigurations connections,
             IDateTimeService dateTimeService,
             IJwtServices jwtServices)
         {
@@ -27,7 +27,7 @@ namespace CleanArchitecture.Infrastructure.Database
             _jwtServices = jwtServices;
         }
 
-        public SampleDbContext(DbContextOptions options,
+        public LMSDbContext(DbContextOptions options,
             IDateTimeService dateTimeService,
             IJwtServices jwtServices) : base(options)
         {
@@ -51,7 +51,7 @@ namespace CleanArchitecture.Infrastructure.Database
 
 
         #region Private override
-        void ISampleDbContext.SaveChanges()
+        void ILMSDbContext.SaveChanges()
         {
             SaveChanges();
         }

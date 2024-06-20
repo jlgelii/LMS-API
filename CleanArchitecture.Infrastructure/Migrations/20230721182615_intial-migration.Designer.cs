@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CleanArchitecture.Infrastructure.Migrations
 {
-    [DbContext(typeof(SampleDbContext))]
+    [DbContext(typeof(LMSDbContext))]
     [Migration("20230721182615_intial-migration")]
     partial class intialmigration
     {

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CleanArchitecture.Application.Configurations.Database
 {
-    public interface ISampleDbContext
+    public interface ILMSDbContext
     {
         DbSet<UserAccount> UserAccount { get; set; }
 

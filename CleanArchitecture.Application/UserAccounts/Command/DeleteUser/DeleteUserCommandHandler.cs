@@ -15,11 +15,11 @@ namespace CleanArchitecture.Application.UserAccounts.Command.DeleteUser
 {
     public class DeleteUserCommandHandler : IRequestHandler<DeleteUserCommand, Response<UserAccount>>
     {
-        private readonly ISampleDbContext _context;
+        private readonly ILMSDbContext _context;
         private readonly IJwtServices _jwtServices;
         private readonly IDateTimeService _dateTimeService;
 
-        public DeleteUserCommandHandler(ISampleDbContext context, 
+        public DeleteUserCommandHandler(ILMSDbContext context, 
             IJwtServices jwtServices,
             IDateTimeService dateTimeService)
         {

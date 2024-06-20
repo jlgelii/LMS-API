@@ -13,9 +13,9 @@ namespace CleanArchitecture.Application.UserAccounts.Queries.GetUsers
 {
     public class GetUsersQueryHandler : IRequestHandler<GetUsersQuery, Response<List<UserAccount>>>
     {
-        private readonly ISampleDbContext _context;
+        private readonly ILMSDbContext _context;
 
-        public GetUsersQueryHandler(ISampleDbContext context)
+        public GetUsersQueryHandler(ILMSDbContext context)
         {
             this._context = context;
         }

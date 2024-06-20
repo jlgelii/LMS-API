@@ -12,12 +12,12 @@ namespace CleanArchitecture.Test.Configurations.Database
 {
     public class SeedTestData
     {
-        public static void Seed(SampleDbContext context)
+        public static void Seed(LMSDbContext context)
         {
             SeedUserAccount(context);
         }
 
-        public static void UnSeedData(SampleDbContext context)
+        public static void UnSeedData(LMSDbContext context)
         {
             if (context.UserAccount.Count() != 0)
                 context.UserAccount.RemoveRange(context.UserAccount.ToList());
@@ -28,7 +28,7 @@ namespace CleanArchitecture.Test.Configurations.Database
 
 
 
-        private static void SeedUserAccount(SampleDbContext context)
+        private static void SeedUserAccount(LMSDbContext context)
         {
             var users = new List<UserAccount>()
             {

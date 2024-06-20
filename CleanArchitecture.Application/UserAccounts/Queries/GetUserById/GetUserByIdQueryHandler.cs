@@ -12,9 +12,9 @@ namespace CleanArchitecture.Application.UserAccounts.Queries.GetUserById
 {
     public class GetUserByIdQueryHandler : IRequestHandler<GetUserByIdQuery, Response<GetUserByIdDto>>
     {
-        private readonly ISampleDbContext _context;
+        private readonly ILMSDbContext _context;
 
-        public GetUserByIdQueryHandler(ISampleDbContext context)
+        public GetUserByIdQueryHandler(ILMSDbContext context)
         {
             this._context = context;
         }
